@@ -6,7 +6,7 @@ on:
     - main
 
 env:
-  UNIQUE_APP_NAME: net8cart
+  UNIQUE_APP_NAME: vccart
   AZURE_RESOURCE_GROUP_NAME: vc-orleanscart-rg
   AZURE_RESOURCE_GROUP_LOCATION: eastus2
 
