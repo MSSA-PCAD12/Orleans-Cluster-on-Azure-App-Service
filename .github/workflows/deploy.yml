@@ -36,14 +36,14 @@ jobs:
           --template-file '.github/workflows/flex/main.bicep' \
           --parameters location=${{ env.AZURE_RESOURCE_GROUP_LOCATION }} \
             appName=${{ env.UNIQUE_APP_NAME }} \
-          --debug
+          
 
     - name: Webapp deploy
       run: |
         az webapp deploy --name ${{ env.UNIQUE_APP_NAME }} \
           --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME  }} \
           --clean true --restart true \
-          --type zip --src-path silo.zip --debug
+          --type zip --src-path silo.zip 
 
     - name: Staging deploy
       run: |
@@ -51,4 +51,4 @@ jobs:
           --slot ${{ env.UNIQUE_APP_NAME }}stg \
           --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME  }} \
           --clean true --restart true \
-          --type zip --src-path silo.zip --debug
+          --type zip --src-path silo.zip
